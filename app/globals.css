@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 213 33% 97%; /* #F4F7FA */
+    --foreground: 215 28% 17%; /* #1F2937 */
+
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    --primary: 207 88% 35%; /* #0B5FA5 */
+    --primary-hover: 208 88% 29%; /* #094E8A */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 213 30% 93%;
+    --secondary-foreground: 213 72% 16%;
+
+    --muted: 212 24% 94%;
+    --muted-foreground: 214 13% 41%; /* #5B6776 */
+
+    --accent: 180 82% 30%; /* #0E8A8A */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 356 75% 41%; /* #B42318 */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 212 24% 89%; /* #DCE3EA */
+    --input: 212 24% 89%;
+    --ring: 207 88% 35%;
+
+    --radius: 0.5rem; /* 8px */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@media print {
+  /* Print layout rules */
+  .no-print,
+  aside,
+  header,
+  nav,
+  button,
+  .print-hidden {
+    display: none !important;
+  }
+
+  body,
+  main {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  th,
+  td {
+    border: 1px solid #dce3ea !important;
+    padding: 6px 10px !important;
+    font-size: 11pt !important;
+  }
+
+  @page {
+    margin: 1.5cm;
+    size: auto;
+  }
+}
